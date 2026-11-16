@@ -1,0 +1,11 @@
+---
+const items = [
+  ['¿Qué es la analítica embebida?', 'Es incluir paneles, informes y respuestas de datos dentro de tu propia aplicación, con tu marca, en lugar de enviar a los usuarios a otra herramienta.'],
+  ['¿Cómo funciona Insight Demo?', 'Instalas un SDK, conectas tus fuentes de datos y montas componentes de panel en tu interfaz. Este texto es de relleno para el ejercicio.'],
+  ['¿Es segura?', 'En esta demo ficticia se describe un modelo con roles, auditoría y límites de uso. No hay producto real detrás.'],
+  ['¿Puedo usar mi propia marca?', 'Sí, el diseño de ejemplo contempla colores, tipografías y logotipos personalizables (white-label).'],
+];
+---
+<div class="faq">
+  {items.map(([q,a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+</div>

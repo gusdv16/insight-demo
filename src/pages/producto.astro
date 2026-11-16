@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import Ico from '../components/Ico.astro';
+import DashMock from '../components/DashMock.astro';
+import ChatMock from '../components/ChatMock.astro';
+import Cta from '../components/Cta.astro';
+---
+<Base title="Producto | Insight Demo">
+  <section class="section page-hero"><div class="wrap center rv"><span class="eyebrow">Producto</span><h1>Una plataforma, <span class="grad">todo tu panel</span></h1><p class="lead">Componentes, SDK e IA para llevar analítica a tu aplicación. Contenido de relleno.</p></div></section>
+  <section class="section" id="sdk"><div class="wrap"><div class="grid g2">
+    <div class="rv"><h2>SDK y API</h2><p class="lead">Integra paneles con pocas líneas de código y controla cada aspecto desde tu aplicación.</p><ul class="list"><li>Componentes para web y móvil</li><li>API de datos y de eventos</li><li>Temas y marca personalizables</li></ul></div>
+    <div class="rv"><DashMock chat={false} /></div></div></div></section>
+  <section class="section bg-dark" id="ia"><div class="wrap"><div class="grid g2">
+    <div class="rv"><ChatMock /></div>
+    <div class="rv"><h2>Analítica con IA</h2><p class="lead" style="color:#b3bccd">Conversaciones con tus datos, resúmenes automáticos y sugerencias de gráficos.</p></div></div></div></section>
+  <section class="section" id="gobierno"><div class="wrap"><h2 class="center">Gobierno y seguridad</h2><div class="grid g3" style="margin-top:32px">
+    <div class="card rv"><Ico n="user" /><h3>Roles y permisos</h3><p>Acceso granular por usuario, grupo o fila de datos.</p></div>
+    <div class="card rv"><Ico n="list" /><h3>Auditoría</h3><p>Todo queda registrado y se puede exportar.</p></div>
+    <div class="card rv"><Ico n="cloud" /><h3>Despliegue</h3><p>Nube, local o híbrido según tus requisitos.</p></div></div></div></section>
+  <section class="section bg-gray" id="marca"><div class="wrap center"><span id="saas"></span><span id="datos"></span><h2>White-label completo</h2><p class="lead">Tus colores, tu tipografía, tu dominio. Pensado para SaaS y equipos de datos.</p></div></section>
+  <Cta />
+</Base>

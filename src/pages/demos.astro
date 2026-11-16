@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import DashMock from '../components/DashMock.astro';
+import Cta from '../components/Cta.astro';
+const demos = [['Panel de ventas','Ingresos, pedidos y proyección por región.'],['Panel de operaciones','Indicadores de rendimiento en tiempo real.'],['Panel financiero','Márgenes, costes y flujo de caja.'],['Panel de marketing','Embudo, campañas y retorno.']];
+---
+<Base title="Demos | Insight Demo">
+  <section class="section page-hero"><div class="wrap center rv"><span class="eyebrow">Demos</span><h1>Explora paneles <span class="grad">de ejemplo</span></h1><p class="lead">Ilustraciones estáticas; no hay datos reales ni producto detrás.</p></div></section>
+  <section class="section"><div class="wrap"><div class="grid g2" style="align-items:start">
+    {demos.map(([t,d]) => <div class="card rv"><DashMock chat={false} /><h3 style="margin-top:18px">{t}</h3><p>{d}</p></div>)}
+  </div></div></section>
+  <Cta />
+</Base>

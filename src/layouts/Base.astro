@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { title, description = 'Insight Demo: plataforma ficticia de analítica embebida. Ejercicio de réplica de diseño.' } = Astro.props;
+---
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#2b46bb" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script is:inline>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body>
+  <Header />
+  <main><slot /></main>
+  <Footer />
+  <div class="cookie" id="ck" hidden><span>Usamos cookies propias solo para demostrar este componente. Es un sitio ficticio.</span><button class="btn" id="ckb">OK</button></div>
+  <script is:inline>
+  (function(){
+    var b=document.querySelector('.burger'),n=document.getElementById('nav');
+    b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+    var ds=document.querySelectorAll('.dd');
+    ds.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)ds.forEach(function(o){if(o!==d)o.open=false})})});
+    document.addEventListener('click',function(e){if(!e.target.closest('.dd'))ds.forEach(function(o){o.open=false})});
+    var rs=document.querySelectorAll('.rv');
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});rs.forEach(function(r){io.observe(r)})}else rs.forEach(function(r){r.classList.add('in')});
+    try{if(!localStorage.getItem('ck')){var c=document.getElementById('ck');c.hidden=false;document.getElementById('ckb').onclick=function(){c.hidden=true;localStorage.setItem('ck','1')}}}catch(e){}
+  })();
+  </script>
+</body>
+</html>

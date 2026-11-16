@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+const posts = [['Guía de analítica embebida','Conceptos básicos y cómo elegir una plataforma.'],['White-label: cuida tu marca','Cómo personalizar paneles sin perder coherencia.'],['IA en paneles de datos','Qué aporta y qué límites conviene fijar.'],['Medir el retorno','Métricas para justificar la inversión.'],['Seguridad por diseño','Roles, auditoría y buenas prácticas.'],['Migrar desde informes estáticos','Pasos y errores frecuentes.']];
+---
+<Base title="Recursos | Insight Demo">
+  <section class="section page-hero"><div class="wrap center rv"><span class="eyebrow">Recursos</span><h1>Guías y <span class="grad">artículos</span></h1><p class="lead">Textos de relleno redactados para el ejercicio.</p></div></section>
+  <section class="section"><div class="wrap"><div class="grid g3">
+    {posts.map(([t,d],i) => <article class="card rv"><div style={`height:120px;border-radius:12px;margin-bottom:16px;background:linear-gradient(135deg,${['#f59a4a','#2b46bb','#2fb5a8'][i%3]},${['#e8548a','#8fa2ff','#2b46bb'][i%3]})`} role="img" aria-label="Imagen decorativa"></div><h3>{t}</h3><p>{d}</p></article>)}
+  </div></div></section>
+  <section class="section bg-gray" id="casos"><div class="wrap center"><h2>Casos de éxito</h2><p class="lead">Historias ficticias de clientes ficticios, próximamente.</p></div></section>
+  <Cta />
+</Base>

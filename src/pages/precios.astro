@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+const plans = [
+  ['Starter','$0','Para probar la idea',['1 aplicación','Hasta 100 usuarios','Soporte por correo'],false],
+  ['Business','$0','Para equipos en crecimiento',['Aplicaciones ilimitadas','Usuarios ilimitados','Asistente de IA','Soporte prioritario'],true],
+  ['Enterprise','A medida','Para grandes organizaciones',['Despliegue dedicado','SSO y auditoría avanzada','Gestor de cuenta'],false],
+];
+---
+<Base title="Precios | Insight Demo">
+  <section class="section page-hero"><div class="wrap center rv"><span class="eyebrow">Precios</span><h1>Tarifa fija, <span class="grad">sin sorpresas</span></h1><p class="lead">Precios ficticios: este sitio es un ejercicio de diseño.</p></div></section>
+  <section class="section"><div class="wrap"><div class="grid g3">
+    {plans.map(([n,p,d,f,hl]) => (
+      <div class={'card plan rv' + (hl ? ' hl' : '')}><h3>{n}</h3><div class="price">{p}{p.startsWith('$') && <small> / mes</small>}</div><p>{d}</p><ul class="list" style="margin-top:16px">{(f as string[]).map(x => <li>{x}</li>)}</ul><a class={'btn' + (hl ? '' : ' ghost')} href="/contacto">Empezar</a></div>
+    ))}
+  </div></div></section>
+  <section class="section bg-gray"><div class="wrap" style="max-width:820px"><h2 class="center">Preguntas frecuentes</h2><Faq /></div></section>
+  <Cta />
+</Base>

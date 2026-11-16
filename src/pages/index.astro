@@ -1,0 +1,130 @@
+---
+import Base from '../layouts/Base.astro';
+import DashMock from '../components/DashMock.astro';
+import ChatMock from '../components/ChatMock.astro';
+import Ico from '../components/Ico.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+const logos = ['Nortia','Pixelforge','Lumen&Co','Brightly','Cobalto','Vertex Labs','Alderon','Quasar'];
+const quotes = [
+  ['Pudimos lanzar paneles dentro de nuestra app en semanas, sin renunciar al control de datos ni a la marca.','Laura M.','Directora de Producto, Nortia'],
+  ['Los usuarios pasan más tiempo explorando sus métricas y nos piden menos informes a medida.','Diego R.','CTO, Pixelforge'],
+  ['El precio fijo nos permitió planificar el año sin sorpresas al crecer.','Ana P.','Finanzas, Brightly'],
+];
+---
+<Base title="Insight Demo | Analítica embebida con control empresarial (ejercicio de diseño)">
+  <section class="section hero">
+    <div class="blob o" style="width:420px;height:420px;left:-120px;top:-60px"></div>
+    <div class="blob p" style="width:380px;height:380px;right:-100px;top:80px"></div>
+    <div class="wrap">
+      <div class="grid g2">
+        <div>
+          <h1><span class="grad">Analítica con IA</span><br/>embebida y bajo tu control</h1>
+          <p class="lead">Ofrece paneles, informes y respuestas inteligentes dentro de tu aplicación, con gobierno de datos y un coste predecible.</p>
+          <p class="lead">Insight Demo es una plataforma ficticia creada para este ejercicio de diseño.</p>
+          <div class="btns"><a class="btn" href="/contacto">Solicitar demo</a><a class="btn ghost" href="/demos">▶ Ver demo</a></div>
+        </div>
+        <DashMock />
+      </div>
+      <p class="center" style="margin-top:48px;color:#555d6b">Usado por empresas de software que ofrecen analítica a miles de usuarios (nombres ficticios).</p>
+      <div class="marquee" aria-hidden="true"><div class="track">{[...logos,...logos].map(l => <span>{l}</span>)}</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g2">
+        <div class="rv">
+          <h2>Pensado para usuarios.<br/>Construido para el control.</h2>
+          <p class="lead">Paneles con tu marca que mantienen a los usuarios explorando datos y confiando en tu aplicación.</p>
+          <ul class="list">
+            <li><strong>Control total del SDK.</strong> Integra componentes en tu código con pocas líneas.</li>
+            <li><strong>Multiplataforma.</strong> Web, móvil y escritorio con la misma base.</li>
+            <li><strong>100 % white-label.</strong> Colores, tipografías y logotipos a tu medida.</li>
+          </ul>
+        </div>
+        <div class="rv"><DashMock chat={false} /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray">
+    <div class="wrap">
+      <div class="center rv"><h2>No solo gráficos. Inteligencia accionable.</h2><p class="lead">Tres capacidades para que tus usuarios pasen de ver datos a decidir.</p></div>
+      <div class="grid g3" style="margin-top:36px">
+        <div class="card rv"><Ico n="chat" /><h3>Analítica conversacional</h3><p>Preguntas en lenguaje natural y respuestas con gráficos, dentro de tu producto.</p></div>
+        <div class="card rv"><Ico n="shield" /><h3>Gobierno y seguridad</h3><p>Roles, permisos por fila y registro de actividad para cada consulta.</p></div>
+        <div class="card rv"><Ico n="coin" /><h3>Coste predecible</h3><p>Tarifa fija sin cobros por usuario ni por consulta.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark" id="ia">
+    <div class="wrap">
+      <div class="grid g2">
+        <div class="rv">
+          <span class="eyebrow" style="color:#8fa2ff">Asistente de IA</span>
+          <h2>Respuestas al instante.<br/>Profundidad de panel.</h2>
+          <p class="lead" style="color:#b3bccd">La IA mejora tus paneles, no los reemplaza: cada respuesta puede abrirse como un gráfico editable.</p>
+          <a class="btn white" href="/producto#ia">Conocer más</a>
+        </div>
+        <div class="rv"><ChatMock /></div>
+      </div>
+      <h2 class="center" style="margin:72px 0 28px;font-size:1.9rem">Arquitectura centrada en el gobierno</h2>
+      <div class="grid g4">
+        <div class="card rv"><Ico n="user" /><h3>Acceso por roles</h3><p>Cada usuario ve solo lo que le corresponde.</p></div>
+        <div class="card rv"><Ico n="list" /><h3>Auditoría completa</h3><p>Historial de preguntas, consultas y cambios.</p></div>
+        <div class="card rv"><Ico n="chart" /><h3>Límites de uso</h3><p>Topes configurables para controlar el consumo de IA.</p></div>
+        <div class="card rv"><Ico n="cloud" /><h3>Despliegue flexible</h3><p>En la nube, en tu infraestructura o híbrido.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="center rv"><h2>Lanza en semanas, no en trimestres</h2></div>
+      <div class="cmp" style="margin-top:32px">
+        <div class="card rv"><h3>Desarrollo interno</h3><p>Tiempo hasta producción</p><div class="bar"><i style="width:90%"></i></div><p>Equipo dedicado, mantenimiento continuo y roadmap propio.</p></div>
+        <div class="card rv"><h3>Con Insight Demo</h3><p>Tiempo hasta producción</p><div class="bar b"><i style="width:18%"></i></div><p>SDK listo, componentes probados y soporte incluido.</p></div>
+      </div>
+      <div class="grid g3 center" style="margin-top:48px">
+        <div class="rv"><div class="stat" data-n>4×</div><p>más rápido de lanzar</p></div>
+        <div class="rv"><div class="stat">62 %</div><p>menos peticiones de informes</p></div>
+        <div class="rv"><div class="stat">+35 %</div><p>de tiempo en la app</p></div>
+      </div>
+      <p class="center" style="color:#555d6b;font-size:.85rem">Cifras ilustrativas de relleno.</p>
+    </div>
+  </section>
+
+  <section class="section bg-gray">
+    <div class="wrap">
+      <div class="grid g2">
+        <div class="rv">
+          <h2>Precio fijo. Sin sorpresas.</h2>
+          <p class="lead">Una tarifa plana, escala ilimitada. Por qué el precio fijo gana:</p>
+          <ul class="list"><li>Sin cobros por usuario final</li><li>Presupuesto anual previsible</li><li>Crece sin renegociar</li></ul>
+          <a class="btn" href="/precios">Ver precios</a>
+        </div>
+        <div class="card rv center"><span class="pill">Plan de ejemplo</span><div class="price">$0<small> / ficticio</small></div><p>Usuarios ilimitados · Paneles ilimitados · Soporte incluido</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="center rv"><h2>Lo que dicen los equipos</h2><p class="lead">Opiniones inventadas para el ejercicio.</p></div>
+      <div class="grid g3" style="margin-top:36px">
+        {quotes.map(([q,n,r]) => (
+          <figure class="card rv" style="margin:0"><blockquote class="quote" style="margin:0">“{q}”</blockquote>
+            <figcaption class="who"><span class="av">{n[0]}</span><span><strong>{n}</strong><br/><small style="color:#555d6b">{r}</small></span></figcaption></figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray">
+    <div class="wrap" style="max-width:820px"><h2 class="center">Preguntas frecuentes</h2><Faq /></div>
+  </section>
+
+  <Cta />
+</Base>

@@ -1,0 +1,14 @@
+---
+const bars = [40,66,52,88,74,104];
+---
+<svg class="mock" viewBox="0 0 560 360" role="img" aria-label="Ilustración de una conversación con un asistente de datos" width="560" height="360" style="border-color:#34405a">
+  <rect width="560" height="360" rx="14" fill="#262f3f"/>
+  <rect x="150" y="28" width="380" height="44" rx="14" fill="#2b46bb"/><text x="168" y="55" font-size="14" fill="#fff" font-family="sans-serif">¿Qué región creció más este trimestre?</text>
+  <circle cx="40" cy="120" r="14" fill="#e8548a"/>
+  <rect x="64" y="96" width="440" height="92" rx="14" fill="#34405a"/>
+  <text x="82" y="124" font-size="14" fill="#fff" font-family="sans-serif">La región Norte creció un 18 % frente</text>
+  <text x="82" y="146" font-size="14" fill="#fff" font-family="sans-serif">al trimestre anterior, impulsada por…</text>
+  <rect x="82" y="160" width="120" height="8" rx="4" fill="#4b5878"/>
+  <rect x="64" y="204" width="440" height="120" rx="14" fill="#fff"/>
+  {bars.map((h,i) => <rect x={92+i*62} y={308-h} width="34" height={h} rx="5" fill={i===5 ? '#e8548a' : '#8fa2ff'}/>)}
+</svg>
