@@ -9,7 +9,7 @@ const plans = [
 ];
 ---
 <Base title="Precios | Insight Demo">
-  <section class="section page-hero"><div class="wrap center rv"><span class="eyebrow">Precios</span><h1>Tarifa fija, <span class="grad">sin sorpresas</span></h1><p class="lead">Precios ficticios: este sitio es un ejercicio de diseño.</p></div></section>
+  <section class="section page-hero"><div class="wrap center rv"><span class="eyebrow">Precios</span><h1>Tarifa fija, <span class="grad">sin sorpresas</span></h1><p class="lead">Precios ficticios: este sitio es un proyecto de diseño.</p></div></section>
   <section class="section"><div class="wrap"><div class="grid g3">
     {plans.map(([n,p,d,f,hl]) => (
       <div class={'card plan rv' + (hl ? ' hl' : '')}><h3>{n}</h3><div class="price">{p}{p.startsWith('$') && <small> / mes</small>}</div><p>{d}</p><ul class="list" style="margin-top:16px">{(f as string[]).map(x => <li>{x}</li>)}</ul><a class={'btn' + (hl ? '' : ' ghost')} href="/contacto">Empezar</a></div>
